@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var vm: CryptoViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(vm.cryptos, id: \.id) { crypto in
+            CryptoCellView(crypto: crypto)
+                .padding()
         }
-        .padding()
+        .task { await vm.fetch() }
+        .refreshable { await vm.fetch() }
+        .redacted(reason: vm.isLoading ? .placeholder : [])
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(vm: CryptoViewModel())
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172B262B2B7BD718007358C3 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172B262A2B7BD718007358C3 /* CryptoViewModel.swift */; };
 		176A2B382B7AD354008A5ECD /* CryptoLiveActivityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2B372B7AD354008A5ECD /* CryptoLiveActivityApp.swift */; };
 		176A2B3A2B7AD354008A5ECD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2B392B7AD354008A5ECD /* ContentView.swift */; };
 		176A2B3C2B7AD356008A5ECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176A2B3B2B7AD356008A5ECD /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		172B262A2B7BD718007358C3 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
 		176A2B342B7AD354008A5ECD /* CryptoLiveActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoLiveActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		176A2B372B7AD354008A5ECD /* CryptoLiveActivityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoLiveActivityApp.swift; sourceTree = "<group>"; };
 		176A2B392B7AD354008A5ECD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		172B26292B7BD705007358C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				172B262A2B7BD718007358C3 /* CryptoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		176A2B2B2B7AD354008A5ECD = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 			children = (
 				176A2B372B7AD354008A5ECD /* CryptoLiveActivityApp.swift */,
 				176A2B392B7AD354008A5ECD /* ContentView.swift */,
+				172B26292B7BD705007358C3 /* ViewModels */,
 				179738FA2B7BCC9A00D38536 /* Models */,
 				176A2B7F2B7AD7EB008A5ECD /* Views */,
 				176A2B7E2B7AD7D5008A5ECD /* Resources */,
@@ -395,6 +406,7 @@
 				179738FC2B7BCD7500D38536 /* CryptoModel.swift in Sources */,
 				179738FE2B7BD0B700D38536 /* CryptoModelPreview.swift in Sources */,
 				176A2B812B7AD846008A5ECD /* CryptoCellView.swift in Sources */,
+				172B262B2B7BD718007358C3 /* CryptoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
