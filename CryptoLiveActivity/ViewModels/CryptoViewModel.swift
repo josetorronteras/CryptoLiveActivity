@@ -21,6 +21,7 @@ final class CryptoViewModel {
 
 // MARK: - Public Methods
 extension CryptoViewModel {
+    
     /// Fetch the cryptos from API and update the cryptos array
     func fetch() async {
         isLoading = true
@@ -46,6 +47,7 @@ extension CryptoViewModel {
 
 // MARK: - Crypto Extension
 extension Crypto {
+    
     /// Mock Crypto
     static var mock: Crypto {
         Crypto(symbol: "title", price: "price", pct: "", imageurl: "")

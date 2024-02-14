@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		172B262B2B7BD718007358C3 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172B262A2B7BD718007358C3 /* CryptoViewModel.swift */; };
+		172B262D2B7CBC4B007358C3 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172B262C2B7CBC4B007358C3 /* FavoritesViewModel.swift */; };
 		176A2B382B7AD354008A5ECD /* CryptoLiveActivityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2B372B7AD354008A5ECD /* CryptoLiveActivityApp.swift */; };
 		176A2B3A2B7AD354008A5ECD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2B392B7AD354008A5ECD /* ContentView.swift */; };
 		176A2B3C2B7AD356008A5ECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176A2B3B2B7AD356008A5ECD /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		172B262A2B7BD718007358C3 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
+		172B262C2B7CBC4B007358C3 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		176A2B342B7AD354008A5ECD /* CryptoLiveActivity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoLiveActivity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		176A2B372B7AD354008A5ECD /* CryptoLiveActivityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoLiveActivityApp.swift; sourceTree = "<group>"; };
 		176A2B392B7AD354008A5ECD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				172B262A2B7BD718007358C3 /* CryptoViewModel.swift */,
+				172B262C2B7CBC4B007358C3 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				176A2B3A2B7AD354008A5ECD /* ContentView.swift in Sources */,
+				172B262D2B7CBC4B007358C3 /* FavoritesViewModel.swift in Sources */,
 				176A2B382B7AD354008A5ECD /* CryptoLiveActivityApp.swift in Sources */,
 				179738FC2B7BCD7500D38536 /* CryptoModel.swift in Sources */,
 				179738FE2B7BD0B700D38536 /* CryptoModelPreview.swift in Sources */,

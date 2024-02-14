@@ -9,22 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var vm: CryptoViewModel
+    @Bindable var cryptoViewModel: CryptoViewModel = CryptoViewModel()
+    @State var favoritesViewModel = FavoritesViewModel()
     
     var body: some View {
-        List(vm.cryptos, id: \.id) { crypto in
-            CryptoCellView(crypto: crypto)
+        List(cryptoViewModel.cryptos, id: \.id) { crypto in
+            CryptoCellView(crypto: crypto, vm:favoritesViewModel)
                 .padding()
         }
-        .task { await vm.fetch() }
-        .refreshable { await vm.fetch() }
-        .alert(isPresented: $vm.showError, content: {
+        .task { await cryptoViewModel.fetch() }
+        .refreshable { await cryptoViewModel.fetch() }
+        .alert(isPresented: $cryptoViewModel.showError, content: {
             Alert(title: Text("An error occurred, try again later"))
         })
-        .redacted(reason: vm.isLoading ? .placeholder : [])
+        .redacted(reason: cryptoViewModel.isLoading ? .placeholder : [])
     }
 }
 
 #Preview {
-    ContentView(vm: CryptoViewModel())
+    ContentView()
 }

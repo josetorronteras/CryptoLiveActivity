@@ -10,6 +10,7 @@ import SwiftUI
 struct CryptoCellView: View {
     
     var crypto: Crypto
+    @State var vm: FavoritesViewModel
     
     var body: some View {
         HStack {
@@ -33,8 +34,9 @@ struct CryptoCellView: View {
             Spacer()
             
             Button {
+                vm.modify(crypto)
             } label: {
-                Image(systemName: "star")
+                Image(systemName: vm.contains(crypto) ? "star.fill": "star")
                     .foregroundStyle(.yellow)
             }
             .padding([.top, .bottom])
@@ -44,9 +46,9 @@ struct CryptoCellView: View {
 
 #Preview(traits: .sizeThatFitsLayout) {
     Group {
-        CryptoCellView(crypto: Crypto.crypto)
+        CryptoCellView(crypto: Crypto.crypto, vm: FavoritesViewModel())
             .padding()
-        CryptoCellView(crypto: Crypto.cryptoWithoutImage)
+        CryptoCellView(crypto: Crypto.cryptoWithoutImage, vm: FavoritesViewModel())
             .padding()
     }
 }
