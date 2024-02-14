@@ -18,6 +18,9 @@ struct ContentView: View {
         }
         .task { await vm.fetch() }
         .refreshable { await vm.fetch() }
+        .alert(isPresented: $vm.showError, content: {
+            Alert(title: Text("An error occurred, try again later"))
+        })
         .redacted(reason: vm.isLoading ? .placeholder : [])
     }
 }

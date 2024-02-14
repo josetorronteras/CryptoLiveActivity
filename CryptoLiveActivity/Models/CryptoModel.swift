@@ -40,3 +40,10 @@ struct Crypto: Decodable, Identifiable {
         case imageurl = "IMAGEURL"
     }
 }
+
+// MARK: - Crypto Comparable
+extension Crypto: Comparable {
+    static func < (lhs: Crypto, rhs: Crypto) -> Bool {
+        lhs.symbol < rhs.symbol
+    }
+}
