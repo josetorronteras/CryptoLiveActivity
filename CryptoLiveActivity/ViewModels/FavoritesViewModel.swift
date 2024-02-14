@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ActivityKit
 
 @Observable
 final class FavoritesViewModel {
@@ -21,8 +22,10 @@ extension FavoritesViewModel {
     func modify(_ crypto: Crypto) {
         if !contains(crypto) {
             favorites.insert(crypto.id)
+            addLive(crypto)
         } else {
             favorites.remove(crypto.id)
+            removeLive(crypto)
         }
     }
     
@@ -34,4 +37,29 @@ extension FavoritesViewModel {
 
 // MARK: - Private Methods
 private extension FavoritesViewModel {
+    
+    /// Request add activity
+    /// state: Is the initial ActivityAttributes.ContentState for the Live Activity.
+    /// staleDate: A Date to indicate the OS when the Live Activity will become outdated. If no staleDate is passed, after 8 hours, the OS will end the Live Activity.
+    /// relevanceScore: If we have more than one Live Activity, relevanceScore will indicate the priority to show on the dynamic island and the order in the lock screen.
+    func addLive(_ crypto: Crypto) {
+        let attributes = CryptoLiveActivityWidgetAttributes(id: crypto.id, symbol: crypto.symbol)
+        let state = CryptoLiveActivityWidgetAttributes.ContentState(price: crypto.price, pct: crypto.pct, timer: 0.0)
+        let content = ActivityContent(state: state, staleDate: nil, relevanceScore: 1.0)
+        do {
+            let activity = try Activity<CryptoLiveActivityWidgetAttributes>.request(attributes: attributes, content: content)
+            print("LiveActivityService: \(activity.id) Live Activity created.")
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    /// Request to dismiss an activity
+    func removeLive(_ crypto: Crypto) {
+        if let activity = Activity<CryptoLiveActivityWidgetAttributes>.activities.first(where: { $0.attributes.id == crypto.id }) {
+            Task {
+                await activity.end(nil, dismissalPolicy: .immediate)
+            }
+        }
+    }
 }

@@ -15,16 +15,16 @@ struct CryptoLiveActivityWidgetView: View {
     var body: some View {
         HStack {
             Circle()
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .frame(width: 50.0, height: 50.0)
             VStack(alignment: .leading) {
                 Text(context.attributes.symbol)
                     .font(.title2)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.white)
                     .bold()
-                Text("\(context.state.price) €")
+                Text(context.state.price)
                     .font(.body)
-                    .foregroundStyle(.black.opacity(0.7))
+                    .foregroundStyle(.white.opacity(0.7))
             }
             Spacer()
             VStack(alignment: .trailing) {
@@ -36,7 +36,8 @@ struct CryptoLiveActivityWidgetView: View {
                 }
                 .foregroundColor(.green)
                 ProgressView(value: context.state.timer)
-                    .scaledToFit()
+                    .tint(.white)
+                    .background(.white.opacity(0.7))
                     .frame(width: 60)
             }
         }

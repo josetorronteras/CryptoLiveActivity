@@ -15,7 +15,7 @@ struct CryptoLiveActivityWidgetLiveActivity: Widget {
         ActivityConfiguration(for: CryptoLiveActivityWidgetAttributes.self) { context in
             CryptoLiveActivityWidgetView(context: context)
                 .padding()
-                .activityBackgroundTint(Color.cyan)
+                .activityBackgroundTint(.black)
                 .activitySystemActionForegroundColor(.black)
         } dynamicIsland: { context in
             DynamicIsland {
