@@ -11,10 +11,10 @@ import Foundation
 final class CryptoViewModel {
     
     private(set) var isLoading: Bool = true
-    private(set) var cryptos: [Crypto] = [.mock]
+    private(set) var cryptos: [Crypto]
     var showError: Bool = false
     
-    init(initialState: [Crypto] = Array.init(repeating: .mock, count: 5)) {
+    init(initialState: [Crypto] = .mock) {
         self.cryptos = initialState
     }
 }
@@ -46,10 +46,12 @@ extension CryptoViewModel {
 }
 
 // MARK: - Crypto Extension
-extension Crypto {
+extension [Crypto] {
     
     /// Mock Crypto
-    static var mock: Crypto {
-        Crypto(id: "uniqueId", symbol: "title", price: "price", pct: "", imageurl: "")
+    static var mock: [Crypto] {
+        (0..<5).map { _ in
+            Crypto(symbol: "title", price: "price", pct: "", imageurl: "")
+        }
     }
 }

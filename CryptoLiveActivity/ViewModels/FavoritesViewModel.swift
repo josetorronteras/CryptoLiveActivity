@@ -13,6 +13,17 @@ final class FavoritesViewModel {
     
     // The actual cryptos the user has favorited
     private var favorites = Set<String>()
+    
+    // Key to use UserDefault
+    private var key: String = "favorites"
+    
+    init() {
+        let userDefaults = UserDefaults.standard
+        if let savedFavorites = userDefaults.array(forKey: key) as? [String] {
+            favorites = Set(savedFavorites.filter { checkLiveActivityLife($0) } )
+            UserDefaults.standard.set(Array(favorites), forKey: key)
+        }
+    }
 }
 
 // MARK: - Public Methods
@@ -27,6 +38,8 @@ extension FavoritesViewModel {
             favorites.remove(crypto.id)
             removeLive(crypto)
         }
+        favorites = favorites.filter { checkLiveActivityLife($0) }
+        UserDefaults.standard.set(Array(favorites), forKey: key)
     }
     
     // returns true if our set contains this crypto
@@ -66,5 +79,11 @@ private extension FavoritesViewModel {
                 await activity.end(nil, dismissalPolicy: .immediate)
             }
         }
+    }
+    
+    /// Check if live activity still showing
+    func checkLiveActivityLife(_ id: String) -> Bool {
+        let activity = Activity<CryptoLiveActivityWidgetAttributes>.activities.first(where: { $0.attributes.id == id })
+        return activity != nil ? true : false
     }
 }

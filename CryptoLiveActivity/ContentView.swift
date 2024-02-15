@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Bindable var cryptoViewModel: CryptoViewModel = CryptoViewModel()
-    @State var favoritesViewModel = FavoritesViewModel()
+    @Environment(CryptoViewModel.self) var cryptoViewModel
+    @Environment(FavoritesViewModel.self) var favoritesViewModel
     
     var body: some View {
+        @Bindable var cryptoViewModel = cryptoViewModel
         List(cryptoViewModel.cryptos, id: \.id) { crypto in
             CryptoCellView(crypto: crypto, vm: favoritesViewModel)
                 .padding()
@@ -22,6 +23,7 @@ struct ContentView: View {
         .alert(isPresented: $cryptoViewModel.showError, content: {
             Alert(title: Text("An error occurred, try again later"))
         })
+        .disabled(cryptoViewModel.isLoading ? true : false)
         .redacted(reason: cryptoViewModel.isLoading ? .placeholder : [])
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
@@ -36,4 +38,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(CryptoViewModel())
+        .environment(FavoritesViewModel())
 }
