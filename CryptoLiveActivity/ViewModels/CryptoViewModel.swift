@@ -50,6 +50,6 @@ extension Crypto {
     
     /// Mock Crypto
     static var mock: Crypto {
-        Crypto(symbol: "title", price: "price", pct: "", imageurl: "")
+        Crypto(id: "uniqueId", symbol: "title", price: "price", pct: "", imageurl: "")
     }
 }

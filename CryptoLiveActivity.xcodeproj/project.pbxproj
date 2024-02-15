@@ -24,7 +24,6 @@
 		176A2B6A2B7AD441008A5ECD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176A2B692B7AD441008A5ECD /* SwiftUI.framework */; };
 		176A2B6D2B7AD441008A5ECD /* CryptoLiveActivityWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2B6C2B7AD441008A5ECD /* CryptoLiveActivityWidgetBundle.swift */; };
 		176A2B6F2B7AD441008A5ECD /* CryptoLiveActivityWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2B6E2B7AD441008A5ECD /* CryptoLiveActivityWidgetLiveActivity.swift */; };
-		176A2B732B7AD441008A5ECD /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2B722B7AD441008A5ECD /* AppIntent.swift */; };
 		176A2B752B7AD443008A5ECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176A2B742B7AD443008A5ECD /* Assets.xcassets */; };
 		176A2B792B7AD443008A5ECD /* CryptoLiveActivityWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 176A2B652B7AD441008A5ECD /* CryptoLiveActivityWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		176A2B812B7AD846008A5ECD /* CryptoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176A2B802B7AD846008A5ECD /* CryptoCellView.swift */; };
@@ -91,7 +90,6 @@
 		176A2B692B7AD441008A5ECD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		176A2B6C2B7AD441008A5ECD /* CryptoLiveActivityWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoLiveActivityWidgetBundle.swift; sourceTree = "<group>"; };
 		176A2B6E2B7AD441008A5ECD /* CryptoLiveActivityWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoLiveActivityWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		176A2B722B7AD441008A5ECD /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		176A2B742B7AD443008A5ECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		176A2B762B7AD443008A5ECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		176A2B802B7AD846008A5ECD /* CryptoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCellView.swift; sourceTree = "<group>"; };
@@ -225,12 +223,11 @@
 		176A2B6B2B7AD441008A5ECD /* CryptoLiveActivityWidget */ = {
 			isa = PBXGroup;
 			children = (
-				172B26312B7CDB32007358C3 /* Preview Content */,
 				172B262E2B7CD820007358C3 /* CryptoLiveActivityWidgetAttributes.swift */,
 				176A2B6C2B7AD441008A5ECD /* CryptoLiveActivityWidgetBundle.swift */,
 				176A2B6E2B7AD441008A5ECD /* CryptoLiveActivityWidgetLiveActivity.swift */,
 				172B26372B7D272F007358C3 /* CryptoLiveActivityWidgetView.swift */,
-				176A2B722B7AD441008A5ECD /* AppIntent.swift */,
+				172B26312B7CDB32007358C3 /* Preview Content */,
 				176A2B742B7AD443008A5ECD /* Assets.xcassets */,
 				176A2B762B7AD443008A5ECD /* Info.plist */,
 			);
@@ -458,7 +455,6 @@
 				172B26302B7CD8BC007358C3 /* CryptoLiveActivityWidgetAttributes.swift in Sources */,
 				172B26342B7CDC71007358C3 /* CryptoLiveActivityWidgetAttributesPreview.swift in Sources */,
 				176A2B6F2B7AD441008A5ECD /* CryptoLiveActivityWidgetLiveActivity.swift in Sources */,
-				176A2B732B7AD441008A5ECD /* AppIntent.swift in Sources */,
 				176A2B6D2B7AD441008A5ECD /* CryptoLiveActivityWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

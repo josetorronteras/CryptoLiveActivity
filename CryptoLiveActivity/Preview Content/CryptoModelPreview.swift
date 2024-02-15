@@ -10,10 +10,10 @@ import Foundation
 extension Crypto {
     
     static var crypto: Crypto {
-        Crypto(symbol: "BTC", price: "55123", pct: "", imageurl: "")
+        Crypto(id: "uniqueId", symbol: "BTC", price: "55123", pct: "", imageurl: "")
     }
     
     static var cryptoWithoutImage: Crypto {
-        Crypto(symbol: "BTC", price: "55123", pct: "", imageurl: "/media/37746251/btc.png")
+        Crypto(id: "uniqueId", symbol: "BTC", price: "55123", pct: "", imageurl: "/media/37746251/btc.png")
     }
 }

@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         List(cryptoViewModel.cryptos, id: \.id) { crypto in
-            CryptoCellView(crypto: crypto, vm:favoritesViewModel)
+            CryptoCellView(crypto: crypto, vm: favoritesViewModel)
                 .padding()
         }
         .task { await cryptoViewModel.fetch() }
@@ -23,6 +23,14 @@ struct ContentView: View {
             Alert(title: Text("An error occurred, try again later"))
         })
         .redacted(reason: cryptoViewModel.isLoading ? .placeholder : [])
+        .toolbar {
+            ToolbarItemGroup(placement: .bottomBar) {
+                Text("API Cache 10 seconds")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity)
+            }
+        }
     }
 }
 

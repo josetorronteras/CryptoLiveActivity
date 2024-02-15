@@ -19,7 +19,7 @@ struct Cryptos: Decodable {
 // MARK: - Display
 struct Display: Decodable {
     let eur: Crypto
-
+    
     enum CodingKeys: String, CodingKey {
         case eur = "EUR"
     }
@@ -27,7 +27,7 @@ struct Display: Decodable {
 
 // MARK: - Crypto
 struct Crypto: Decodable, Identifiable {
-    var id: String = UUID().uuidString
+    let id: String
     let symbol: String
     let price: String
     let pct: String
@@ -38,6 +38,23 @@ struct Crypto: Decodable, Identifiable {
         case price = "PRICE"
         case pct = "CHANGEPCTDAY"
         case imageurl = "IMAGEURL"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        symbol = try container.decode(String.self, forKey: .symbol)
+        price = try container.decode(String.self, forKey: .price)
+        pct = try container.decode(String.self, forKey: .pct)
+        imageurl = try container.decode(String.self, forKey: .imageurl)
+        id = "\(symbol)-\(imageurl)"
+    }
+    
+    init(id: String, symbol: String, price: String, pct: String, imageurl: String) {
+        self.id = id
+        self.symbol = symbol
+        self.price = price
+        self.pct = pct
+        self.imageurl = imageurl
     }
 }
 
