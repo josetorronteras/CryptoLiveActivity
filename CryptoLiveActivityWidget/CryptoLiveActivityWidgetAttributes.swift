@@ -13,7 +13,6 @@ struct CryptoLiveActivityWidgetAttributes: ActivityAttributes {
         // Dynamic stateful properties about your activity go here!
         var price: String
         var pct: String
-        var timer: Float
     }
     
     // Fixed non-changing properties about your activity go here!

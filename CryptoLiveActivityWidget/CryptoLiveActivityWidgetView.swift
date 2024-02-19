@@ -14,8 +14,8 @@ struct CryptoLiveActivityWidgetView: View {
     
     var body: some View {
         HStack {
-            Circle()
-                .foregroundColor(.white)
+            thumbnailImage(context.attributes.id)
+                .resizable()
                 .frame(width: 50.0, height: 50.0)
             VStack(alignment: .leading) {
                 Text(context.attributes.symbol)
@@ -27,19 +27,32 @@ struct CryptoLiveActivityWidgetView: View {
                     .foregroundStyle(.white.opacity(0.7))
             }
             Spacer()
-            VStack(alignment: .trailing) {
-                HStack(spacing: 2) {
-                    Image(systemName: "arrowtriangle.up.fill")
-                        .font(.body)
-                    Text(context.state.pct)
-                        .font(.body)
-                }
-                .foregroundColor(.green)
-                ProgressView(value: context.state.timer)
-                    .tint(.white)
-                    .background(.white.opacity(0.7))
-                    .frame(width: 60)
+            HStack(spacing: 2) {
+                Image(systemName: "arrowtriangle.up.fill")
+                    .font(.body)
+                Text("\(context.state.pct) %")
+                    .font(.body)
             }
+            .foregroundColor(.green)
+        }
+    }
+}
+
+// MARK: - Private Methods
+private extension CryptoLiveActivityWidgetView {
+    
+    /// Creates a thumbnail image from an image file name.
+    func thumbnailImage(_ imageFileName: String) -> Image {
+        let defaultImage = Image(systemName: "dollarsign.circle.fill")
+        
+        guard let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.josetorronteras.cryptoLive")?.appendingPathComponent(imageFileName) else {
+            return defaultImage
+        }
+        
+        if let data = try? Data(contentsOf: url), let uiImage = UIImage(data: data) {
+            return Image(uiImage: uiImage)
+        } else {
+            return defaultImage
         }
     }
 }

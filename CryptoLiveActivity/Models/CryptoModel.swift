@@ -46,7 +46,7 @@ struct Crypto: Decodable, Identifiable {
         price = try container.decode(String.self, forKey: .price)
         pct = try container.decode(String.self, forKey: .pct)
         imageurl = try container.decode(String.self, forKey: .imageurl)
-        id = "\(symbol)-\(imageurl)"
+        id = symbol
     }
 
     /// Used for mock data

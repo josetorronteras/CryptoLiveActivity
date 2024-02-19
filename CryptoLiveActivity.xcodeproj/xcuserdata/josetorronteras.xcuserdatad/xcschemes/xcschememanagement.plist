@@ -7,12 +7,25 @@
 		<key>CryptoLiveActivity.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>CryptoLiveActivityWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>176A2B332B7AD354008A5ECD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>176A2B642B7AD441008A5ECD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

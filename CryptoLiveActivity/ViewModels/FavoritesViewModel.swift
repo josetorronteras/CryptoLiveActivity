@@ -62,7 +62,7 @@ private extension FavoritesViewModel {
     /// the order in the lock screen.
     func addLive(_ crypto: Crypto) {
         let attributes = CryptoLiveActivityWidgetAttributes(id: crypto.id, symbol: crypto.symbol)
-        let state = CryptoLiveActivityWidgetAttributes.ContentState(price: crypto.price, pct: crypto.pct, timer: 0.0)
+        let state = CryptoLiveActivityWidgetAttributes.ContentState(price: crypto.price, pct: crypto.pct)
         let content = ActivityContent(state: state, staleDate: nil, relevanceScore: 1.0)
         do {
             let activity = try Activity<CryptoLiveActivityWidgetAttributes>.request(attributes: attributes, content: content)

@@ -70,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17026FEA2B7E770100ED0AF5 /* CryptoLiveActivity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoLiveActivity.entitlements; sourceTree = "<group>"; };
+		17026FEB2B7E77A100ED0AF5 /* CryptoLiveActivityWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoLiveActivityWidgetExtension.entitlements; sourceTree = "<group>"; };
 		172B262A2B7BD718007358C3 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
 		172B262C2B7CBC4B007358C3 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		172B262E2B7CD820007358C3 /* CryptoLiveActivityWidgetAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoLiveActivityWidgetAttributes.swift; sourceTree = "<group>"; };
@@ -174,11 +176,12 @@
 		176A2B362B7AD354008A5ECD /* CryptoLiveActivity */ = {
 			isa = PBXGroup;
 			children = (
+				17026FEA2B7E770100ED0AF5 /* CryptoLiveActivity.entitlements */,
 				176A2B372B7AD354008A5ECD /* CryptoLiveActivityApp.swift */,
 				176A2B392B7AD354008A5ECD /* ContentView.swift */,
+				176A2B7F2B7AD7EB008A5ECD /* Views */,
 				172B26292B7BD705007358C3 /* ViewModels */,
 				179738FA2B7BCC9A00D38536 /* Models */,
-				176A2B7F2B7AD7EB008A5ECD /* Views */,
 				176A2B7E2B7AD7D5008A5ECD /* Resources */,
 				176A2B3D2B7AD356008A5ECD /* Preview Content */,
 			);
@@ -223,6 +226,7 @@
 		176A2B6B2B7AD441008A5ECD /* CryptoLiveActivityWidget */ = {
 			isa = PBXGroup;
 			children = (
+				17026FEB2B7E77A100ED0AF5 /* CryptoLiveActivityWidgetExtension.entitlements */,
 				172B262E2B7CD820007358C3 /* CryptoLiveActivityWidgetAttributes.swift */,
 				176A2B6C2B7AD441008A5ECD /* CryptoLiveActivityWidgetBundle.swift */,
 				176A2B6E2B7AD441008A5ECD /* CryptoLiveActivityWidgetLiveActivity.swift */,
@@ -605,6 +609,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CryptoLiveActivity/CryptoLiveActivity.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptoLiveActivity/Preview Content\"";
@@ -641,6 +646,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CryptoLiveActivity/CryptoLiveActivity.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptoLiveActivity/Preview Content\"";
@@ -752,6 +758,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CryptoLiveActivityWidget/CryptoLiveActivityWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CFGHT54P44;
@@ -767,6 +775,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.josetorronteras.CryptoLiveActivity.CryptoLiveActivityWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -779,6 +788,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CryptoLiveActivityWidget/CryptoLiveActivityWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CFGHT54P44;
@@ -794,6 +805,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.josetorronteras.CryptoLiveActivity.CryptoLiveActivityWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

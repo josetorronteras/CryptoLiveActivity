@@ -19,10 +19,10 @@ extension CryptoLiveActivityWidgetAttributes {
 extension CryptoLiveActivityWidgetAttributes.ContentState {
     
     static var initial: CryptoLiveActivityWidgetAttributes.ContentState {
-        CryptoLiveActivityWidgetAttributes.ContentState(price: "48,023.51", pct: "3,14 %", timer: 0.2)
+        CryptoLiveActivityWidgetAttributes.ContentState(price: "48,023.51", pct: "3,14 %")
     }
     
     static var updated: CryptoLiveActivityWidgetAttributes.ContentState {
-        CryptoLiveActivityWidgetAttributes.ContentState(price: "48,056.09", pct: "3,17 %", timer: 0.2)
+        CryptoLiveActivityWidgetAttributes.ContentState(price: "48,056.09", pct: "3,17 %")
     }
 }
