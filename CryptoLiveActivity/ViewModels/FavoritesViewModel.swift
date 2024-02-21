@@ -46,6 +46,15 @@ extension FavoritesViewModel {
     func contains(_ crypto: Crypto) -> Bool {
         favorites.contains(crypto.id)
     }
+
+    /// Update favorites data when the list is refreshed
+    func updateFavorites(_ cryptos: [Crypto]) {
+        cryptos.forEach { crypto in
+            if contains(crypto) {
+                updateLive(crypto)
+            }
+        }
+    }
 }
 
 // MARK: - Private Methods
@@ -77,6 +86,17 @@ private extension FavoritesViewModel {
         if let activity = Activity<CryptoLiveActivityWidgetAttributes>.activities.first(where: { $0.attributes.id == crypto.id }) {
             Task {
                 await activity.end(nil, dismissalPolicy: .immediate)
+            }
+        }
+    }
+
+    /// Update live activity
+    func updateLive(_ crypto: Crypto) {
+        if let activity = Activity<CryptoLiveActivityWidgetAttributes>.activities.first(where: { $0.attributes.id == crypto.id }) {
+            let state = CryptoLiveActivityWidgetAttributes.ContentState(price: crypto.price, pct: crypto.pct)
+            let content = ActivityContent(state: state, staleDate: nil, relevanceScore: 1.0)
+            Task {
+                await activity.update(content)
             }
         }
     }

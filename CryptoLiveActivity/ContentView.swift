@@ -18,8 +18,8 @@ struct ContentView: View {
             CryptoCellView(crypto: crypto, vm: favoritesViewModel)
                 .padding()
         }
-        .task { await cryptoViewModel.fetch() }
-        .refreshable { await cryptoViewModel.fetch() }
+        .task { await fetchAndRefreshFavorites() }
+        .refreshable { await fetchAndRefreshFavorites() }
         .alert(isPresented: $cryptoViewModel.showError, content: {
             Alert(title: Text("An error occurred, try again later"))
         })
@@ -33,6 +33,16 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity)
             }
         }
+    }
+}
+
+// MARK: - Private Methods
+private extension ContentView {
+    
+    /// Fetch cryptos and refresh favorites
+    func fetchAndRefreshFavorites() async {
+        await cryptoViewModel.fetch()
+        favoritesViewModel.updateFavorites(cryptoViewModel.cryptos)
     }
 }
 

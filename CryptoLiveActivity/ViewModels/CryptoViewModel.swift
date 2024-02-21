@@ -41,7 +41,6 @@ extension CryptoViewModel {
             try await fetchAndSaveImage()
             isLoading = false
         } catch {
-            print(error)
             showError = true
         }
     }
@@ -53,12 +52,10 @@ private extension CryptoViewModel {
     /// Fetches and saves images for cryptocurrencies asynchronously
     func fetchAndSaveImage() async throws {
         for crypto in cryptos {
-            print(crypto.id)
             guard let url = URL(string: "https://www.cryptocompare.com/" + crypto.imageurl) else { return }
             let (data, _) = try await URLSession.shared.data(from: url)
             if var path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.josetorronteras.cryptoLive") {
                 path = path.appending(path: crypto.id)
-                print(path)
                 try data.write(to: path)
             }
         }
