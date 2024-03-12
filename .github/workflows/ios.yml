@@ -8,10 +8,12 @@ on:
 
 env:
   SCHEME: CryptoLiveActivity
+  TEST_SCHEME: CryptoLiveActivityTests
+  SIMULATOR: "iPhone 14"
 
 jobs:
   build:
-    name: Build and Test using ${{ matrix.xcode_version }} iOS ${{ matrix.os_version }}
+    name: Build and test using Xcode ${{ matrix.xcode_version }} iOS ${{ matrix.os_version }}
     runs-on: macos-14
     timeout-minutes: 10
     strategy:
@@ -32,11 +34,11 @@ jobs:
           # https://mokacoding.com/blog/xcodebuild-destination-options/
           xcodebuild \
             -scheme "$SCHEME" \
-            -destination "platform=iOS Simulator,name=iPhone 14,OS=${{ matrix.os_version }}" \
+            -destination "platform=iOS Simulator,name=${SIMULATOR},OS=${{ matrix.os_version }}" \
             build-for-testing
       - name: Test
         run: |
           xcodebuild \
-            -scheme "$SCHEME" \
-            -destination "platform=iOS Simulator,name=iPhone 14,OS=${{ matrix.os_version }}" \
+            -scheme "$TEST_SCHEME" \
+            -destination "platform=iOS Simulator,name=${SIMULATOR},OS=${{ matrix.os_version }}" \
             test-without-building
