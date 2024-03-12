@@ -22,6 +22,5 @@ jobs:
           # https://mokacoding.com/blog/xcodebuild-destination-options/
           xcodebuild \
             -scheme "$SCHEME" \
-            -destination "platform=iOS Simulator,name=iPhone 14,OS=17.0" \
-            -allowProvisioningUpdates \
+            -destination "platform=iOS Simulator,name=iPhone 14,OS=17.0.1" \
             build-for-testing
