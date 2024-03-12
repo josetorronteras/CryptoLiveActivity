@@ -19,7 +19,7 @@ jobs:
       matrix:
         # https://github.com/actions/runner-images/blob/main/images/macos/macos-14-Readme.md#installed-simulators
         xcode_version: [ "15.0.1", "15.1", "15.2" ]
-        os_version: [ "17.0.1", "17.1", "17.2" ]
+        os_version: [ "17.0.1", "17.2" ]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -34,3 +34,9 @@ jobs:
             -scheme "$SCHEME" \
             -destination "platform=iOS Simulator,name=iPhone 14,OS=${{ matrix.os_version }}" \
             build-for-testing
+      - name: Test
+        run: |
+          xcodebuild \
+            -scheme "$SCHEME" \
+            -destination "platform=iOS Simulator,name=iPhone 14,OS=${{ matrix.os_version }}" \
+            test-without-building
